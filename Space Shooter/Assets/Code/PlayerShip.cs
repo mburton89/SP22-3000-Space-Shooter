@@ -8,6 +8,7 @@ public class PlayerShip : Ship
     {
         FollowMouse();
         HandleInput();
+        print(rigidbody2D.velocity.magnitude);
     }
 
     void HandleInput()
@@ -16,6 +17,12 @@ public class PlayerShip : Ship
         {
             Thrust();
         }
+
+        if (Input.GetMouseButtonUp(1))
+        {
+            StopThrust();
+        }
+
         if (Input.GetMouseButtonDown(0))
         {
             FireProjectile();
